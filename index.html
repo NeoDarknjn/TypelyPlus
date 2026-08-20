@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Typely+</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <div id="authScreen" class="authScreen">
+
+        <div class="authBox">
+
+            <h1>Typely+</h1>
+
+            <p>Welcome back</p>
+
+            <input
+                id="emailInput"
+                type="email"
+                placeholder="Email"
+            >
+
+            <input
+                id="passwordInput"
+                type="password"
+                placeholder="Password"
+            >
+
+            <input
+                id="usernameInput"
+                type="text"
+                placeholder="Username"
+            >
+
+            <button id="loginButton">
+                Log In
+            </button>
+
+            <button id="signupButton">
+                Create Account
+            </button>
+
+            <p id="authMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <div id="app" class="app hidden">
+
+        <aside class="sidebar">
+
+            <h1>Typely+</h1>
+
+            <div class="profileBox">
+
+                <img
+                    id="myAvatar"
+                    class="avatar"
+                    src=""
+                    alt="Profile picture"
+                >
+
+                <div
+                    id="myUsername"
+                    class="myUsername"
+                >
+                    @username
+                </div>
+
+                <input
+                    id="avatarInput"
+                    type="file"
+                    accept="image/*"
+                    hidden
+                >
+
+                <button id="changeAvatarButton">
+                    Change Profile Picture
+                </button>
+
+                <button id="changeUsernameButton">
+                    Change Username
+                </button>
+
+            </div>
+
+            <button id="addFriendButton">
+                ＋ Add Friend
+            </button>
+
+            <h3>Friends</h3>
+
+            <div id="friendsList"></div>
+
+            <button id="logoutButton">
+                Log Out
+            </button>
+
+        </aside>
+
+
+        <main class="chat">
+
+            <header class="chatHeader">
+
+                <div class="chatTitle">
+
+                    <img
+                        id="chatAvatar"
+                        class="chatAvatar"
+                        src=""
+                        alt=""
+                    >
+
+                    <h2 id="chatName">
+                        Welcome to Typely+
+                    </h2>
+
+                </div>
+
+                <button
+                    id="callButton"
+                    title="Call"
+                >
+                    📞
+                </button>
+
+            </header>
+
+
+            <div
+                id="messages"
+                class="messages"
+            ></div>
+
+
+            <div class="messageBox">
+
+                <input
+                    id="messageInput"
+                    type="text"
+                    placeholder="Type a message..."
+                >
+
+                <input
+                    id="imageInput"
+                    type="file"
+                    accept="image/*"
+                    hidden
+                >
+
+                <button id="imageButton">
+                    📷
+                </button>
+
+                <button id="sendButton">
+                    Send
+                </button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <div
+        id="friendPopup"
+        class="popup hidden"
+    >
+
+        <div class="popupContent">
+
+            <h2>Add Friend</h2>
+
+            <input
+                id="friendInput"
+                type="text"
+                placeholder="Username"
+            >
+
+            <button id="confirmFriend">
+                Add
+            </button>
+
+            <button id="closePopup">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="usernamePopup"
+        class="popup hidden"
+    >
+
+        <div class="popupContent">
+
+            <h2>Change Username</h2>
+
+            <input
+                id="newUsernameInput"
+                type="text"
+                placeholder="New username"
+            >
+
+            <button id="saveUsernameButton">
+                Save
+            </button>
+
+            <button id="closeUsernamePopup">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="incomingCallPopup"
+        class="popup hidden"
+    >
+
+        <div class="popupContent">
+
+            <h2>Incoming Call 📞</h2>
+
+            <p id="incomingCallText">
+                Someone is calling you...
+            </p>
+
+            <button id="acceptCallButton">
+                Accept
+            </button>
+
+            <button id="rejectCallButton">
+                Decline
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="callPopup"
+        class="popup hidden"
+    >
+
+        <div class="popupContent">
+
+            <h2 id="callStatus">
+                Calling...
+            </h2>
+
+            <button id="hangupButton">
+                🔴 Hang Up
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <audio
+        id="remoteAudio"
+        autoplay
+    ></audio>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
